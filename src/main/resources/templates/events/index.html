@@ -8,11 +8,15 @@
 
 <h1>All Events</h1>
 
+<p th:unless="${events} and ${events.size()}">No events!</p>
+
 <ul>
     <th:block th:each="event : ${events}">
         <li th:text="${event}"></li>
     </th:block>
 </ul>
+
+<p th:replace="fragments :: linkList"></p>
 
 </body>
 </html>
